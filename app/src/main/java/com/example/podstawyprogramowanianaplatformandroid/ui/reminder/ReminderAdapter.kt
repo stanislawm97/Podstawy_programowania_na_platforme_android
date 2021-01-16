@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.podstawyprogramowanianaplatformandroid.R
+import com.example.podstawyprogramowanianaplatformandroid.database.entity.ReminderEntity
 
 class ReminderAdapter : RecyclerView.Adapter<ReminderAdapter.ViewHolder>() {
     private val list = ArrayList<ReminderEntity>()

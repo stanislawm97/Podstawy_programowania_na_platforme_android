@@ -56,7 +56,7 @@
     </fragment>
     <fragment
         android:id="@+id/newReminderFragment"
-        android:name="com.example.podstawyprogramowanianaplatformandroid.ui.reminder.NewReminderFragment"
+        android:name="com.example.podstawyprogramowanianaplatformandroid.ui.newreminder.NewReminderFragment"
         android:label="@string/menu_reminder"
         tools:layout="@layout/fragment_new_reminder" >
         <action

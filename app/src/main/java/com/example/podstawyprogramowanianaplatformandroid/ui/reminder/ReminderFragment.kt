@@ -14,6 +14,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.podstawyprogramowanianaplatformandroid.R
+import com.example.podstawyprogramowanianaplatformandroid.database.MyRoomDatabase
+import com.example.podstawyprogramowanianaplatformandroid.database.dao.ReminderDao
+import com.example.podstawyprogramowanianaplatformandroid.database.entity.ReminderEntity
 import kotlinx.android.synthetic.main.fragment_reminder.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -28,7 +31,7 @@ class ReminderFragment : Fragment(R.layout.fragment_reminder) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val database = ReminderDatabase.getInstance(requireActivity().applicationContext)
+        val database = MyRoomDatabase.getInstance(requireActivity().applicationContext)
         reminderDao = database!!.reminderDao()
 
         setHasOptionsMenu(false)
