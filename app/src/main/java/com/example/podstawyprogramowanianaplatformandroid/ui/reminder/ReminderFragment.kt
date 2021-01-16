@@ -14,8 +14,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.podstawyprogramowanianaplatformandroid.R
-import com.example.podstawyprogramowanianaplatformandroid.database.MyRoomDatabase
 import com.example.podstawyprogramowanianaplatformandroid.database.dao.ReminderDao
+import com.example.podstawyprogramowanianaplatformandroid.database.database.MyRoomDatabase
 import com.example.podstawyprogramowanianaplatformandroid.database.entity.ReminderEntity
 import kotlinx.android.synthetic.main.fragment_reminder.*
 import kotlinx.coroutines.CoroutineScope

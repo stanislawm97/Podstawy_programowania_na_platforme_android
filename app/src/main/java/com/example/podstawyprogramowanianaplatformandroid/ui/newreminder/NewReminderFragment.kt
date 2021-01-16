@@ -13,8 +13,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.podstawyprogramowanianaplatformandroid.R
-import com.example.podstawyprogramowanianaplatformandroid.database.MyRoomDatabase
 import com.example.podstawyprogramowanianaplatformandroid.database.dao.ReminderDao
+import com.example.podstawyprogramowanianaplatformandroid.database.database.MyRoomDatabase
 import com.example.podstawyprogramowanianaplatformandroid.database.entity.ReminderEntity
 import com.example.podstawyprogramowanianaplatformandroid.ui.reminder.AlarmReceiver
 import com.example.podstawyprogramowanianaplatformandroid.ui.reminder.MyDatePickerDialog
