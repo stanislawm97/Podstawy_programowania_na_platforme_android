@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_note">
+
+    <fragment
+        android:id="@+id/nav_note"
+        android:name="com.example.podstawyprogramowanianaplatformandroid.ui.note.NoteFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_note">
+        <action
+            android:id="@+id/action_nav_note_to_nav_new_note"
+            app:destination="@id/nav_new_note"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_note" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_reminder"
+        android:name="com.example.podstawyprogramowanianaplatformandroid.ui.reminder.ReminderFragment"
+        android:label="@string/menu_reminder"
+        tools:layout="@layout/fragment_reminder" >
+        <action
+            android:id="@+id/action_nav_reminder_to_newReminderFragment"
+            app:destination="@id/newReminderFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_3"
+        android:name="com.example.podstawyprogramowanianaplatformandroid.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_new_note"
+        android:name="com.example.podstawyprogramowanianaplatformandroid.ui.newnote.NewNoteFragment"
+        android:label="@string/new_note"
+        tools:layout="@layout/fragment_new_note">
+        <action
+            android:id="@+id/action_nav_new_note_to_nav_note"
+            app:destination="@id/nav_note"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/mobile_navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/newReminderFragment"
+        android:name="com.example.podstawyprogramowanianaplatformandroid.ui.reminder.NewReminderFragment"
+        android:label="@string/menu_reminder"
+        tools:layout="@layout/fragment_new_reminder" >
+        <action
+            android:id="@+id/action_newReminderFragment_to_nav_reminder"
+            app:destination="@id/nav_reminder"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_reminder"
+            app:launchSingleTop="true" />
+    </fragment>
+</navigation>

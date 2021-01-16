@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">PPnPA</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Podstawy programowania na platformę Android</string>
+    <string name="nav_header_subtitle">Stanisław Mól</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Notatka</string>
+    <string name="menu_reminder">Przypominajka</string>
+    <string name="menu_slideshow">2</string>
+    <string name="new_note">Nowa Notatka</string>
+    <string name="note">Notatka</string>
+    <string name="snack_bar_undo">Cofnij</string>
+    <string name="snack_bar_text">Notatka usunięta</string>
+    <string name="title">Tytuł</string>
+    <string name="save">Zapisz</string>
+    <string name="date">Data</string>
+    <string name="desc_error">Coś poszło nie tak…</string>
+    <string name="wrong_note_title">Niepoprawny tytuł notatki!</string>
+    <string name="save_note">Zapisano notatkę</string>
+    <string name="was_deleted">została trwale usunięta!</string>
+    <string name="note_exist">Notatka z podanym tytułem już istnieje!</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="delete">Usuń</string>
+    <string name="edit">Edytuj</string>
+</resources>
