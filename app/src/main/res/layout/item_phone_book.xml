@@ -51,7 +51,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.8"
+            android:layout_weight="0.5"
             android:layout_gravity="center_vertical"
             android:orientation="vertical">
 
@@ -60,6 +60,7 @@
                 style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
@@ -73,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
+                android:gravity="center"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:maxEms="8"
@@ -86,6 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
+                android:gravity="center"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
@@ -93,6 +96,18 @@
                 android:singleLine="true"
                 tools:text="admin@bytt.com" />
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/bt_call"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="0.2"
+            android:backgroundTint="@color/colorOnPrimary"
+            android:foreground="@drawable/ic_baseline_call_24"
+            android:foregroundTint="@color/colorPrimary"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
 
     <View

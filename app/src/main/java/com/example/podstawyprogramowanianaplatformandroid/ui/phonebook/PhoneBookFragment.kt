@@ -2,10 +2,14 @@ package com.example.podstawyprogramowanianaplatformandroid.ui.phonebook
 
 import android.app.SearchManager
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import androidx.appcompat.widget.SearchView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -89,9 +93,15 @@ class PhoneBookFragment : Fragment(R.layout.fragment_phone_book), SearchView.OnQ
                 )
             }
 
+            setOnItemClickListener {
+                val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:" + it.number))
+                startActivity(intent)
+            }
+
             submitItems(contacts)
         }
 
+        initGenderSpinner()
     }
 
     private fun addOnClickFabAction() {
@@ -106,5 +116,32 @@ class PhoneBookFragment : Fragment(R.layout.fragment_phone_book), SearchView.OnQ
                 if (dy > 0) fab_add_note.hide() else if (dy < 0) fab_add_note.show()
             }
         })
+    }
+
+    private fun initGenderSpinner() {
+        val genders = listOf(
+            "Rosnąco",
+            "Malejąco"
+        )
+        val adapter: ArrayAdapter<String> = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_dropdown_item_1line,
+            genders
+        )
+        filled_exposed_dropdown.setText("Rosnąco")
+        filled_exposed_dropdown.setAdapter(adapter)
+
+        (filled_exposed_dropdown as AutoCompleteTextView).setOnItemClickListener { _, _, position, _ ->
+            when (genders[position]) {
+                "Rosnąco" -> {
+                    (rv_phone_book.adapter as PhoneBookAdapter).sortAZ()
+                }
+                "Malejąco" -> {
+                    (rv_phone_book.adapter as PhoneBookAdapter).sortZA()
+                }
+                else -> {
+                }
+            }
+        }
     }
 }

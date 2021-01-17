@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -20,6 +21,7 @@ class PhoneBookAdapter : RecyclerView.Adapter<PhoneBookAdapter.PhoneBookViewHold
         val tvEmail: TextView = itemView.findViewById(R.id.tv_email)
         val llContact: LinearLayout = itemView.findViewById(R.id.ll_contact)
         val ivAvatar: ImageView = itemView.findViewById(R.id.iv_avatar)
+        val btCall: ImageButton = itemView.findViewById(R.id.bt_call)
     }
 
     private val items = ArrayList<PhoneBookEntity>()
@@ -27,6 +29,7 @@ class PhoneBookAdapter : RecyclerView.Adapter<PhoneBookAdapter.PhoneBookViewHold
     private val copyItems = ArrayList<PhoneBookEntity>()
     private var onListChangedCallback: ((List<PhoneBookEntity>) -> Unit)? = null
     private var onItemLongClickListener: ((PhoneBookEntity) -> Unit)? = null
+    private var onItemClickListener: ((PhoneBookEntity) -> Unit)? = null
 
     fun setOnListChangedCallback(action: (List<PhoneBookEntity>) -> Unit) {
         onListChangedCallback = action
@@ -34,6 +37,10 @@ class PhoneBookAdapter : RecyclerView.Adapter<PhoneBookAdapter.PhoneBookViewHold
 
     fun setOnItemLongClickListener(action: ((PhoneBookEntity) -> Unit)) {
         onItemLongClickListener = action
+    }
+
+    fun setOnItemClickListener(action: ((PhoneBookEntity) -> Unit)) {
+        onItemClickListener = action
     }
 
     fun submitItems(items: List<PhoneBookEntity>) {
@@ -97,6 +104,10 @@ class PhoneBookAdapter : RecyclerView.Adapter<PhoneBookAdapter.PhoneBookViewHold
                 onItemLongClickListener?.invoke(item)
                 true
             }
+
+            btCall.setOnClickListener {
+                onItemClickListener?.invoke(item)
+            }
         }
     }
 
@@ -119,6 +130,20 @@ class PhoneBookAdapter : RecyclerView.Adapter<PhoneBookAdapter.PhoneBookViewHold
         items.clear()
         items.addAll(copyItems)
         onListChangedCallback?.invoke(items)
+        notifyDataSetChanged()
+    }
+
+    fun sortAZ() {
+        items.sortBy {
+            it.firstName
+        }
+        notifyDataSetChanged()
+    }
+
+    fun sortZA() {
+        items.sortByDescending {
+            it.firstName
+        }
         notifyDataSetChanged()
     }
 

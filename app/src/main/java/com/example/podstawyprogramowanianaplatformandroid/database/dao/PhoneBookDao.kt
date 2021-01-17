@@ -16,7 +16,7 @@ interface PhoneBookDao {
     @Update
     fun update(phoneBookEntity: PhoneBookEntity)
 
-    @Query("SELECT * FROM phone_book_table")
+    @Query("SELECT * FROM phone_book_table ORDER BY firstName")
     fun getAllPhoneBook(): List<PhoneBookEntity>
 
     @Query("SELECT * FROM phone_book_table WHERE id = :phoneBookEntityId")

@@ -39,4 +39,6 @@
     <string name="undefined">Nieokreślone</string>
     <string name="woman">Kobieta</string>
     <string name="man">Mężczyzna</string>
+    <string name="sort">Sortuj</string>
+    <string name="call">Zadźwoń</string>
 </resources>
