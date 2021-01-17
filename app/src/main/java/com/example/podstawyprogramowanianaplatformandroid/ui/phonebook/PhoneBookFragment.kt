@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import androidx.appcompat.widget.SearchView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -78,7 +79,16 @@ class PhoneBookFragment : Fragment(R.layout.fragment_phone_book), SearchView.OnQ
                         lav_phone_book.visibility = View.GONE
                     }.start()
                 }
+                fab_add_note.show()
             }
+
+            setOnItemLongClickListener {
+                findNavController().navigate(
+                    R.id.action_nav_phone_book_to_nav_phone_book_details,
+                    bundleOf("PhoneBook" to it.id)
+                )
+            }
+
             submitItems(contacts)
         }
 

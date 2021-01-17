@@ -1,41 +1,83 @@
-package com.example.podstawyprogramowanianaplatformandroid.ui.newphonebook
+package com.example.podstawyprogramowanianaplatformandroid.ui.phonebookdetails
 
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.podstawyprogramowanianaplatformandroid.R
 import com.example.podstawyprogramowanianaplatformandroid.database.dao.PhoneBookDao
 import com.example.podstawyprogramowanianaplatformandroid.database.database.MyRoomDatabase
 import com.example.podstawyprogramowanianaplatformandroid.database.entity.PhoneBookEntity
 import com.google.android.material.textfield.TextInputLayout
-import kotlinx.android.synthetic.main.fragment_new_phone_book.*
+import kotlinx.android.synthetic.main.fragment_phone_book_details.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
+class PhoneBookDetailsFragment : Fragment(R.layout.fragment_phone_book_details) {
 
-class NewPhoneBookFragment : Fragment(R.layout.fragment_new_phone_book) {
-
+    private var phoneBookEntityId: Int? = null
     private lateinit var phoneBookDao: PhoneBookDao
+    private lateinit var phoneBookEntityLiveData: LiveData<PhoneBookEntity>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(false)
 
+        setHasOptionsMenu(false)
         val database = MyRoomDatabase.getInstance(requireActivity().applicationContext)
         phoneBookDao = database!!.phoneBookDao()
+
+        phoneBookEntityId = arguments?.getInt("PhoneBook")
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        phoneBookEntityId?.let { phoneBookEntityLiveData = getPhoneBookEntity(it) }
+        phoneBookEntityLiveData.observe(viewLifecycleOwner, Observer { handlePhoneBook(it) })
+    }
+
+    private fun handlePhoneBook(phoneBookEntity: PhoneBookEntity) {
+
+        (til_first_name as TextInputLayout).editText?.apply {
+            setText(phoneBookEntity.firstName)
+        }
+
+        (til_last_name as TextInputLayout).editText?.apply {
+            setText(phoneBookEntity.lastName)
+        }
+
+        (til_number as TextInputLayout).editText?.apply {
+            setText(phoneBookEntity.number)
+        }
+
+        (til_email as TextInputLayout).editText?.apply {
+            setText(phoneBookEntity.email)
+        }
+
+        (til_gender as TextInputLayout).editText?.apply {
+            setText(phoneBookEntity.gender)
+        }
+
         initGenderSpinner()
 
-        bt_save.setOnClickListener {
+        bt_delete_details.setOnClickListener {
+            phoneBookEntityLiveData.value?.let {
+                CoroutineScope(Dispatchers.IO).launch {
+                    phoneBookDao.delete(phoneBookEntity)
+                }
+            }
+            findNavController().navigate(R.id.action_nav_phone_book_details_to_nav_phone_book)
+        }
 
-            val phoneBookEntity = PhoneBookEntity(
+        bt_save_details.setOnClickListener {
+            val updatedPhoneBookEntity = PhoneBookEntity(
+                id = phoneBookEntityId,
                 firstName = (til_first_name as TextInputLayout).editText?.text.toString().trim(),
                 lastName = (til_last_name as TextInputLayout).editText?.text.toString().trim(),
                 number = (til_number as TextInputLayout).editText?.text.toString().trim(),
@@ -48,10 +90,10 @@ class NewPhoneBookFragment : Fragment(R.layout.fragment_new_phone_book) {
 
             if (validation) {
                 CoroutineScope(Dispatchers.IO).launch {
-                    phoneBookDao.insert(phoneBookEntity)
+                    phoneBookDao.update(updatedPhoneBookEntity)
                 }
 
-                findNavController().navigate(R.id.action_nav_new_phone_book_to_nav_phone_book)
+                findNavController().navigate(R.id.action_nav_phone_book_details_to_nav_phone_book)
             } else {
                 Toast.makeText(
                     requireContext(),
@@ -59,7 +101,12 @@ class NewPhoneBookFragment : Fragment(R.layout.fragment_new_phone_book) {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+
         }
+    }
+
+    private fun getPhoneBookEntity(phoneBookEntityId: Int) = runBlocking {
+        phoneBookDao.getPhoneBook(phoneBookEntityId)
     }
 
     private fun initGenderSpinner() {

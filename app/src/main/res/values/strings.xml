@@ -36,4 +36,7 @@
     <string name="gender">Płeć</string>
     <string name="save">Zapisz</string>
     <string name="new_contact_validation">Proszę wypełnić formularz!</string>
+    <string name="undefined">Nieokreślone</string>
+    <string name="woman">Kobieta</string>
+    <string name="man">Mężczyzna</string>
 </resources>

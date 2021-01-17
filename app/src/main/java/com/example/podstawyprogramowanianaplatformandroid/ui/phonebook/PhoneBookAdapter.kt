@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.podstawyprogramowanianaplatformandroid.R
 import com.example.podstawyprogramowanianaplatformandroid.database.entity.PhoneBookEntity
@@ -25,9 +26,14 @@ class PhoneBookAdapter : RecyclerView.Adapter<PhoneBookAdapter.PhoneBookViewHold
     private val partialItems = ArrayList<PhoneBookEntity>()
     private val copyItems = ArrayList<PhoneBookEntity>()
     private var onListChangedCallback: ((List<PhoneBookEntity>) -> Unit)? = null
+    private var onItemLongClickListener: ((PhoneBookEntity) -> Unit)? = null
 
     fun setOnListChangedCallback(action: (List<PhoneBookEntity>) -> Unit) {
         onListChangedCallback = action
+    }
+
+    fun setOnItemLongClickListener(action: ((PhoneBookEntity) -> Unit)) {
+        onItemLongClickListener = action
     }
 
     fun submitItems(items: List<PhoneBookEntity>) {
@@ -57,8 +63,39 @@ class PhoneBookAdapter : RecyclerView.Adapter<PhoneBookAdapter.PhoneBookViewHold
             tvNumber.text = item.number
             tvEmail.text = item.email
 
-            llContact.setOnClickListener {
+            when (item.gender) {
+                itemView.resources.getString(R.string.woman) -> {
+                    ivAvatar.setImageDrawable(
+                        ResourcesCompat.getDrawable(
+                            itemView.resources,
+                            R.drawable.ic_woman,
+                            null
+                        )
+                    )
+                }
+                itemView.resources.getString(R.string.man) -> {
+                    ivAvatar.setImageDrawable(
+                        ResourcesCompat.getDrawable(
+                            itemView.resources,
+                            R.drawable.ic_man,
+                            null
+                        )
+                    )
+                }
+                else -> {
+                    ivAvatar.setImageDrawable(
+                        ResourcesCompat.getDrawable(
+                            itemView.resources,
+                            R.drawable.ic_bigender,
+                            null
+                        )
+                    )
+                }
+            }
 
+            llContact.setOnLongClickListener {
+                onItemLongClickListener?.invoke(item)
+                true
             }
         }
     }

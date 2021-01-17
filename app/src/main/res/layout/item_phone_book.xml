@@ -22,14 +22,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="0.2"
+            android:layout_weight="0.3"
             android:orientation="vertical"
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/iv_avatar"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/avatar"
                 app:srcCompat="@drawable/ic_baseline_face_24" />
@@ -39,17 +40,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
                 android:gravity="center"
-                android:maxEms="1"
+                android:maxEms="10"
                 android:singleLine="true"
-                tools:text="M" />
+                tools:text="Nieokreślone" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="0.8"
+            android:layout_gravity="center_vertical"
             android:orientation="vertical">
 
             <TextView

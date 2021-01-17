@@ -49,6 +49,15 @@
             app:popEnterAnim="@anim/fragment_close_enter"
             app:popExitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/nav_phone_book" />
+        <action
+            android:id="@+id/action_nav_phone_book_to_nav_phone_book_details"
+            app:destination="@id/nav_phone_book_details"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_phone_book" />
     </fragment>
     <fragment
         android:id="@+id/nav_new_note"
@@ -86,6 +95,19 @@
         tools:layout="@layout/fragment_new_phone_book">
         <action
             android:id="@+id/action_nav_new_phone_book_to_nav_phone_book"
+            app:destination="@id/nav_phone_book"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/mobile_navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_phone_book_details"
+        android:name="com.example.podstawyprogramowanianaplatformandroid.ui.phonebookdetails.PhoneBookDetailsFragment"
+        android:label="Szczegóły">
+        <action
+            android:id="@+id/action_nav_phone_book_details_to_nav_phone_book"
             app:destination="@id/nav_phone_book"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_open_exit"

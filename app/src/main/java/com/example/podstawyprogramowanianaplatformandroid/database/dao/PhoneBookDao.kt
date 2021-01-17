@@ -1,5 +1,6 @@
 package com.example.podstawyprogramowanianaplatformandroid.database.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.podstawyprogramowanianaplatformandroid.database.entity.PhoneBookEntity
 
@@ -17,4 +18,7 @@ interface PhoneBookDao {
 
     @Query("SELECT * FROM phone_book_table")
     fun getAllPhoneBook(): List<PhoneBookEntity>
+
+    @Query("SELECT * FROM phone_book_table WHERE id = :phoneBookEntityId")
+    fun getPhoneBook(phoneBookEntityId: Int): LiveData<PhoneBookEntity>
 }
