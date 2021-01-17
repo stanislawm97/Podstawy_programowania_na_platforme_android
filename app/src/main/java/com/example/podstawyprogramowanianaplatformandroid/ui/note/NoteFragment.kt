@@ -7,9 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.res.ResourcesCompat
@@ -19,7 +17,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import com.example.podstawyprogramowanianaplatformandroid.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_note.*
 import java.io.File
 import java.io.FileInputStream
@@ -86,12 +83,12 @@ class NoteFragment : Fragment(R.layout.fragment_note), SearchView.OnQueryTextLis
         notesAdapter.apply {
             setOnListChangedCallback {
                 if (it.isEmpty()) {
-                    animationView.animate().alpha(1.0f).setDuration(250L).withStartAction {
-                        animationView.visibility = View.VISIBLE
+                    lav_note.animate().alpha(1.0f).setDuration(250L).withStartAction {
+                        lav_note.visibility = View.VISIBLE
                     }.start()
                 } else {
-                    animationView.animate().alpha(0.0f).setDuration(450L).withEndAction {
-                        animationView.visibility = View.GONE
+                    lav_note.animate().alpha(0.0f).setDuration(450L).withEndAction {
+                        lav_note.visibility = View.GONE
                     }.start()
                 }
             }

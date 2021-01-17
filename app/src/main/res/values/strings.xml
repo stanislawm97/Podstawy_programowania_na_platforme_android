@@ -9,13 +9,12 @@
 
     <string name="menu_home">Notatka</string>
     <string name="menu_reminder">Przypominajka</string>
-    <string name="menu_slideshow">2</string>
+    <string name="menu_phone_book">Książka telefoniczna</string>
     <string name="new_note">Nowa Notatka</string>
     <string name="note">Notatka</string>
     <string name="snack_bar_undo">Cofnij</string>
     <string name="snack_bar_text">Notatka usunięta</string>
     <string name="title">Tytuł</string>
-    <string name="save">Zapisz</string>
     <string name="date">Data</string>
     <string name="desc_error">Coś poszło nie tak…</string>
     <string name="wrong_note_title">Niepoprawny tytuł notatki!</string>
@@ -29,4 +28,17 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="delete">Usuń</string>
     <string name="edit">Edytuj</string>
+    <string name="avatar">Avatar</string>
+    <string name="first_name">Imię</string>
+    <string name="last_name">Nazwisko</string>
+    <string name="number">Numer</string>
+    <string name="email">Email</string>
+    <string name="gender">Płeć</string>
+    <string name="save">Zapisz</string>
+    <string name="new_contact_validation">Proszę wypełnić formularz!</string>
+    <string name="undefined">Nieokreślone</string>
+    <string name="woman">Kobieta</string>
+    <string name="man">Mężczyzna</string>
+    <string name="sort">Sortuj</string>
+    <string name="call">Zadźwoń</string>
 </resources>

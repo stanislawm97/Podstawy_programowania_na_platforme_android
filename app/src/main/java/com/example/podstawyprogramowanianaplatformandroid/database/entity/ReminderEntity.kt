@@ -1,4 +1,4 @@
-package com.example.podstawyprogramowanianaplatformandroid.ui.reminder
+package com.example.podstawyprogramowanianaplatformandroid.database.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

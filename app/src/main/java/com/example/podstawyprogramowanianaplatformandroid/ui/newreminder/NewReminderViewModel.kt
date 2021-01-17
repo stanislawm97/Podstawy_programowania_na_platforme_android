@@ -1,4 +1,4 @@
-package com.example.podstawyprogramowanianaplatformandroid.ui.reminder
+package com.example.podstawyprogramowanianaplatformandroid.ui.newreminder
 
 import androidx.lifecycle.ViewModel
 

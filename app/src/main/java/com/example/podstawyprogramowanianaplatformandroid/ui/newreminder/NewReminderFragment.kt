@@ -1,27 +1,28 @@
-package com.example.podstawyprogramowanianaplatformandroid.ui.reminder
+package com.example.podstawyprogramowanianaplatformandroid.ui.newreminder
 
 import android.app.*
-import android.content.Intent
-import androidx.core.os.bundleOf
-import android.app.AlarmManager
-import android.app.DatePickerDialog
-import android.app.PendingIntent
-import android.app.TimePickerDialog
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.DatePicker
 import android.widget.TimePicker
+import androidx.core.os.bundleOf
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.podstawyprogramowanianaplatformandroid.R
+import com.example.podstawyprogramowanianaplatformandroid.database.dao.ReminderDao
+import com.example.podstawyprogramowanianaplatformandroid.database.database.MyRoomDatabase
+import com.example.podstawyprogramowanianaplatformandroid.database.entity.ReminderEntity
+import com.example.podstawyprogramowanianaplatformandroid.ui.reminder.AlarmReceiver
+import com.example.podstawyprogramowanianaplatformandroid.ui.reminder.MyDatePickerDialog
+import com.example.podstawyprogramowanianaplatformandroid.ui.reminder.MyTimePickerDialog
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.fragment_new_reminder.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import java.util.*
 
@@ -43,7 +44,7 @@ class NewReminderFragment : Fragment(R.layout.fragment_new_reminder),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val database = ReminderDatabase.getInstance(requireActivity().applicationContext)
+        val database = MyRoomDatabase.getInstance(requireActivity().applicationContext)
         reminderDao = database!!.reminderDao()
 
         setHasOptionsMenu(false)

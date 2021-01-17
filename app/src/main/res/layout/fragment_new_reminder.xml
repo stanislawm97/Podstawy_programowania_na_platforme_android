@@ -5,7 +5,7 @@
     android:id="@+id/cl_new_reminder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.reminder.NewReminderFragment">
+    tools:context=".ui.newreminder.NewReminderFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_reminder_title"
