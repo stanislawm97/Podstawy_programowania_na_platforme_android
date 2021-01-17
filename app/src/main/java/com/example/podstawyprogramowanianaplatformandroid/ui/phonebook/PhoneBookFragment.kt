@@ -75,15 +75,15 @@ class PhoneBookFragment : Fragment(R.layout.fragment_phone_book), SearchView.OnQ
         rv_phone_book.adapter = PhoneBookAdapter().apply {
             setOnListChangedCallback {
                 if (it.isEmpty()) {
-                    lav_phone_book.animate().alpha(1.0f).setDuration(250L).withStartAction {
-                        lav_phone_book.visibility = View.VISIBLE
-                    }.start()
+                    lav_phone_book.animate()?.alpha(1.0f)?.setDuration(250L)?.withStartAction {
+                        lav_phone_book?.visibility = View.VISIBLE
+                    }?.start()
                 } else {
-                    lav_phone_book.animate().alpha(0.0f).setDuration(450L).withEndAction {
-                        lav_phone_book.visibility = View.GONE
-                    }.start()
+                    lav_phone_book?.animate()?.alpha(0.0f)?.setDuration(450L)?.withEndAction {
+                        lav_phone_book?.visibility = View.GONE
+                    }?.start()
                 }
-                fab_add_note.show()
+                fab_add_note?.show()
             }
 
             setOnItemLongClickListener {
