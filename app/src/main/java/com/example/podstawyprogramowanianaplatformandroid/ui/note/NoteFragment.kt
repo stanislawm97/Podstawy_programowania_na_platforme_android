@@ -67,8 +67,10 @@ class NoteFragment : Fragment(R.layout.fragment_note), SearchView.OnQueryTextLis
 
         path.list()?.forEach {
             val file = File(path, it)
-            val description = String(FileInputStream(file).readBytes())
-            notes.add(NoteItem(it.split(".")[0], description))
+            if (file.isFile) {
+                val description = String(FileInputStream(file).readBytes())
+                notes.add(NoteItem(it.split(".")[0], description))
+            }
         }
 
         val fab = view.findViewById<FloatingActionButton>(R.id.fab_add_note)

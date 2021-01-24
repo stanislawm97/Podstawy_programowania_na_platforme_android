@@ -16,5 +16,9 @@
             android:id="@+id/nav_phone_book"
             android:icon="@drawable/ic_baseline_arrow_right_24"
             android:title="@string/menu_phone_book" />
+        <item
+            android:id="@+id/nav_multimedia_center"
+            android:icon="@drawable/ic_baseline_arrow_right_24"
+            android:title="@string/multimedia_center" />
     </group>
 </menu>

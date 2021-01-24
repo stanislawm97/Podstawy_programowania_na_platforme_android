@@ -25,7 +25,7 @@
         android:id="@+id/nav_reminder"
         android:name="com.example.podstawyprogramowanianaplatformandroid.ui.reminder.ReminderFragment"
         android:label="@string/menu_reminder"
-        tools:layout="@layout/fragment_reminder" >
+        tools:layout="@layout/fragment_reminder">
         <action
             android:id="@+id/action_nav_reminder_to_newReminderFragment"
             app:destination="@id/newReminderFragment"
@@ -83,10 +83,10 @@
             app:destination="@id/nav_reminder"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_open_exit"
+            app:launchSingleTop="true"
             app:popEnterAnim="@anim/fragment_close_enter"
             app:popExitAnim="@anim/fragment_close_exit"
-            app:popUpTo="@id/nav_reminder"
-            app:launchSingleTop="true" />
+            app:popUpTo="@id/nav_reminder" />
     </fragment>
     <fragment
         android:id="@+id/nav_new_phone_book"
@@ -115,4 +115,50 @@
             app:popExitAnim="@anim/fragment_close_exit"
             app:popUpTo="@id/mobile_navigation" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_multimedia_center"
+        android:name="com.example.podstawyprogramowanianaplatformandroid.ui.multimediacenter.MultimediaCenterFragment"
+        android:label="Centrum multimedialne"
+        tools:layout="@layout/fragment_multimedia_center">
+        <action
+            android:id="@+id/action_nav_multimedia_center_to_nav_website"
+            app:destination="@id/nav_website"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_multimedia_center" />
+        <action
+            android:id="@+id/action_nav_multimedia_center_to_sketchbookFragment"
+            app:destination="@id/sketchbookFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_multimedia_center" />
+        <action
+            android:id="@+id/action_nav_multimedia_center_to_cameraFragment"
+            app:destination="@id/cameraFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_multimedia_center" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_website"
+        android:name="com.example.podstawyprogramowanianaplatformandroid.ui.multimediacenter.WebsiteFragment"
+        android:label="@string/website"
+        tools:layout="@layout/fragment_website" />
+    <fragment
+        android:id="@+id/sketchbookFragment"
+        android:name="com.example.podstawyprogramowanianaplatformandroid.ui.multimediacenter.SketchbookFragment"
+        android:label="@string/sketchbook" />
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.example.podstawyprogramowanianaplatformandroid.ui.multimediacenter.CameraFragment"
+        android:label="@string/picture" />
 </navigation>
