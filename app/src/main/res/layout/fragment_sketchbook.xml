@@ -9,112 +9,125 @@
         android:id="@+id/ll_colors"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimaryVariant"
         android:elevation="2dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
+        <android.widget.Button
             android:id="@+id/bt_black"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
+            android:background="@drawable/fullrounderbutton"
             android:backgroundTint="@android:color/black"
             tools:ignore="ButtonStyle" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/bt_holo_blue_bright"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
+            android:background="@drawable/fullrounderbutton"
             android:backgroundTint="@android:color/holo_blue_bright"
             tools:ignore="ButtonStyle" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/bt_holo_green_dark"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
+            android:background="@drawable/fullrounderbutton"
             android:backgroundTint="@android:color/holo_green_dark"
             tools:ignore="ButtonStyle" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/bt_holo_orange_dark"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
-            android:backgroundTint="@android:color/holo_orange_dark"
-            tools:ignore="ButtonStyle" />
+            android:background="@drawable/fullrounderbutton"
+            android:backgroundTint="@android:color/holo_orange_dark" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/bt_holo_red_dark"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
-            android:backgroundTint="@android:color/holo_red_dark"
-            tools:ignore="ButtonStyle" />
+            android:background="@drawable/fullrounderbutton"
+            android:backgroundTint="@android:color/holo_red_dark" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll_size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimaryVariant"
         android:elevation="4dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <android.widget.Button
             android:id="@+id/bt_2"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
+            android:background="@drawable/fullrounderbutton"
+            android:backgroundTint="@color/colorPrimary"
             android:text="2"
             tools:ignore="ButtonStyle,HardcodedText" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/bt_4"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
+            android:background="@drawable/fullrounderbutton"
+            android:backgroundTint="@color/colorPrimary"
             android:text="4"
             tools:ignore="ButtonStyle,HardcodedText" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/bt_6"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
+            android:background="@drawable/fullrounderbutton"
+            android:backgroundTint="@color/colorPrimary"
             android:text="6"
             tools:ignore="ButtonStyle,HardcodedText" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/bt_8"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
+            android:background="@drawable/fullrounderbutton"
+            android:backgroundTint="@color/colorPrimary"
             android:text="8"
             tools:ignore="ButtonStyle,HardcodedText" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/bt_10"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
+            android:background="@drawable/fullrounderbutton"
+            android:backgroundTint="@color/colorPrimary"
             android:text="10"
             tools:ignore="ButtonStyle,HardcodedText" />
     </LinearLayout>

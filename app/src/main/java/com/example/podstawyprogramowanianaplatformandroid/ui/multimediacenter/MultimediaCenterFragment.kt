@@ -20,7 +20,9 @@ class MultimediaCenterFragment : Fragment(R.layout.fragment_multimedia_center) {
             findNavController().navigate(R.id.action_nav_multimedia_center_to_sketchbookFragment)
         }
 
-        bt_music_player.setOnClickListener { }
+        bt_music_player.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_multimedia_center_to_musicPlayerFragment)
+        }
 
         bt_website.setOnClickListener {
             findNavController().navigate(R.id.action_nav_multimedia_center_to_nav_website)
