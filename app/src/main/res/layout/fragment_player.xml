@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryVariant"
+    tools:context=".ui.multimediacenter.PlayerFragment">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_player"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_3"
+        app:layout_constraintEnd_toStartOf="@+id/gl_vertical_2"
+        app:layout_constraintStart_toStartOf="@+id/gl_vertical_1"
+        app:layout_constraintTop_toTopOf="@+id/gl_horizontal_1"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="music-note-character.json"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="@string/hello_blank_fragment"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_vertical_2"
+        app:layout_constraintStart_toStartOf="@+id/gl_vertical_1"
+        app:layout_constraintTop_toBottomOf="@+id/lav_player" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_horizontal_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_horizontal_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_horizontal_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_vertical_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_vertical_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_vertical_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_3"
+        app:layout_constraintEnd_toEndOf="@+id/lav_player"
+        app:layout_constraintStart_toStartOf="@+id/lav_player"
+        app:layout_constraintTop_toBottomOf="@+id/lav_player" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_3"
+        app:layout_constraintEnd_toStartOf="@+id/lav_player"
+        app:layout_constraintTop_toTopOf="@+id/lav_player" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_3"
+        app:layout_constraintStart_toEndOf="@+id/lav_player"
+        app:layout_constraintTop_toTopOf="@+id/lav_player" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/lav_player"
+        app:layout_constraintStart_toStartOf="@+id/lav_player"
+        app:layout_constraintTop_toBottomOf="@+id/lav_player"
+        app:layout_constraintTop_toTopOf="@+id/lav_player" />
+
+    <ImageButton
+        android:id="@+id/ibt_play"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/fullrounderbutton"
+        android:backgroundTint="@color/colorPrimary"
+        android:foreground="@drawable/ic_baseline_play_arrow_24"
+        android:foregroundTint="@color/colorOnPrimary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_2"
+        app:layout_constraintEnd_toStartOf="@+id/gl_vertical_2"
+        app:layout_constraintStart_toStartOf="@+id/gl_vertical_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/ibt_pause"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/fullrounderbutton"
+        android:backgroundTint="@color/colorPrimary"
+        android:foreground="@drawable/ic_baseline_pause_24"
+        android:foregroundTint="@color/colorOnPrimary"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_2"
+        app:layout_constraintEnd_toStartOf="@+id/gl_vertical_2"
+        app:layout_constraintStart_toStartOf="@+id/gl_vertical_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/ibt_next"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/fullrounderbutton"
+        android:backgroundTint="@color/colorPrimary"
+        android:foreground="@drawable/ic_baseline_skip_next_24"
+        android:foregroundTint="@color/colorOnPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_2"
+        app:layout_constraintEnd_toStartOf="@+id/gl_vertical_2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/ibt_previous"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/fullrounderbutton"
+        android:backgroundTint="@color/colorPrimary"
+        android:foreground="@drawable/ic_baseline_skip_previous_24"
+        android:foregroundTint="@color/colorOnPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/gl_horizontal_2"
+        app:layout_constraintStart_toStartOf="@+id/gl_vertical_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

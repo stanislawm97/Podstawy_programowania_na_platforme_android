@@ -46,4 +46,5 @@
     <string name="sketchbook">Szkicownik</string>
     <string name="music_player">Odtwarzacz muzyki</string>
     <string name="website">Strona internetowa</string>
+    <string name="something_goes_wrong">Coś poszło nie tak!</string>
 </resources>
